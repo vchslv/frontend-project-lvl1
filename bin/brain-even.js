@@ -14,7 +14,7 @@ while (equal && (countQuestions > 0)) {
   const number = _.random(100);
   const desiredAnswer = ((number % 2) === 0) ? 'yes' : 'no';
   console.log(`Question: ${number}`);
-  let answer = readlineSync.question('Your answer: ');
+  const answer = readlineSync.question('Your answer: ');
   if (answer === desiredAnswer) {
     console.log('Correct');
     countQuestions -= 1;
