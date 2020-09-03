@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-import { commonLogic } from '../src/index.js';
 import _ from 'lodash';
+import commonLogic from '../src/index.js';
 
 const question = 'What is the result of the expression?';
 
 const brainCalcLogic = () => {
-  const operators = ['+', '-', '*']
+  const operators = ['+', '-', '*'];
   const operand1 = _.random(99);
   const operand2 = _.random(99);
   const index = _.random(2);

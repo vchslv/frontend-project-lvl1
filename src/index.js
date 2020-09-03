@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const commonLogic = (question, f) => {
+const commonLogic = (question, f) => {
   let equal = true;
   let countQuestions = 3;
 
@@ -23,3 +23,5 @@ export const commonLogic = (question, f) => {
     console.log(`Congratulations, ${name}!`);
   }
 };
+
+export default commonLogic;
