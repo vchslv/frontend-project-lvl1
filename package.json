@@ -18,8 +18,8 @@
   "homepage": "https://github.com/vchslv/frontend-project-lvl1#readme",
   "type": "module",
   "bin": {
-    "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-games": "games/brain-even.js",
+    "brain-even": "games/brain-calc.js"
   },
   "dependencies": {
     "lodash": "^4.17.20",

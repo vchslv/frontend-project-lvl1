@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
-import _ from 'lodash';
 
-export const commonLogic = (question, f()) => {
+export const commonLogic = (question, f) => {
   let equal = true;
   let countQuestions = 3;
 
