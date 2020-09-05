@@ -11,7 +11,7 @@ const commonLogic = (question, f) => {
     const [desiredAnswer, text] = f();
     const answer = readlineSync.question(`Question: ${text}\nYour answer: `);
     if (answer === desiredAnswer.toString()) {
-      console.log('Correct');
+      console.log('Correct!');
       countQuestions -= 1;
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${desiredAnswer}".\nLet's try again, ${name}!`);

@@ -5,7 +5,7 @@ import commonLogic from '../src/index.js';
 const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const brainEvenLogic = () => {
-  const number = _.random(100);
+  const number = _.random(99);
   const text = `${number}`;
   const desiredAnswer = ((number % 2) === 0) ? 'yes' : 'no';
   return [desiredAnswer, text];
