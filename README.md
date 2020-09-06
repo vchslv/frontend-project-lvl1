@@ -10,3 +10,5 @@ Vin and losing in the game Brain-calc: https://asciinema.org/a/357678
 Vin and losing in the game Brain-gcd: https://asciinema.org/a/357963
 
 Vin and losing in the game Brain-progression: https://asciinema.org/a/357990
+
+Vin and losing in the game Brain-prime: https://asciinema.org/a/358040
