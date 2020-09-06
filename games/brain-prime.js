@@ -15,13 +15,13 @@ const isPrime = (num) => {
 
 const brainPrimeLogic = () => {
   let desiredAnswer;
-  const number = _.random(-99, 99);
-  if ((number < 1) || !isPrime(number)) {
+  const randomNumber = _.random(-99, 99);
+  if ((randomNumber < 1) || !isPrime(randomNumber)) {
     desiredAnswer = 'no';
   } else {
     desiredAnswer = 'yes';
   }
-  return [desiredAnswer, number]
+  return [desiredAnswer, randomNumber];
 };
 
 commonLogic(question, brainPrimeLogic);
