@@ -18,7 +18,7 @@ const maxCommonDivisor = (num1, num2) => {
 const brainGcdLogic = () => {
   const randomNumber1 = _.random(99);
   const randomNumber2 = _.random(99);
-  const text = `${ randomNumber1 } ${ randomNumber2 }`;
+  const text = `${randomNumber1} ${randomNumber2}`;
   const desiredAnswer = maxCommonDivisor(randomNumber1, randomNumber2);
   return [desiredAnswer, text];
 };

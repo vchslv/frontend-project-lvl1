@@ -7,7 +7,7 @@ const brainCalcLogic = () => {
   const operand2 = _.random(99);
   const randomIndex = _.random(2);
   const randomOperator = operators[randomIndex];
-  const text = `${ operand1 } ${ randomOperator } ${ operand2 }`;
+  const text = `${operand1} ${randomOperator} ${operand2}`;
   if (randomOperator === '+') {
     desiredAnswer = operand1 + operand2;
   } else if (randomOperator === '-') {
