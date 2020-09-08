@@ -1,7 +1,7 @@
 # frontend-project-lvl1
 
 [![Node CI](https://github.com/vchslv/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/vchslv/frontend-project-lvl1/actions)
-[[![Maintainability](https://api.codeclimate.com/v1/badges/bce33271c3c69e491d90/maintainability)](https://codeclimate.com/github/vchslv/frontend-project-lvl1/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/bce33271c3c69e491d90/maintainability)](https://codeclimate.com/github/vchslv/frontend-project-lvl1/maintainability)
 
 Vin and losing in the game Brain-even: https://asciinema.org/a/358042
 
