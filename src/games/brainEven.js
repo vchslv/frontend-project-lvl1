@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import commonLogic from '../index.js';
 
-const checkForParity = (number) => ((number % 2) === 0) ? 'yes' : 'no';
+const checkForParity = (number) => (((number % 2) === 0) ? 'yes' : 'no');
 
 const getBrainEvenLogic = () => {
   const randomNumber = _.random(99);
