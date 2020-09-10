@@ -1,6 +1,7 @@
 import _ from 'lodash';
+import commonLogic from '../index.js';
 
-const brainProgressionLogic = () => {
+const getBrainProgressionLogic = () => {
   let desiredAnswer;
   const progression = [];
   const randomNumber1 = _.random(99);
@@ -12,11 +13,15 @@ const brainProgressionLogic = () => {
       progression.push(numberInProgression);
     } else {
       progression.push('..');
-      desiredAnswer = numberInProgression;
+      desiredAnswer = numberInProgression.toString();
     }
   }
-  const text = progression.join(' ');
-  return [desiredAnswer, text];
+  const roundQuestion = progression.join(' ');
+  return [desiredAnswer, roundQuestion];
 };
 
-export default brainProgressionLogic;
+const gameQuestion = 'What number is missing in the progression?';
+
+const runBrainProgression = () => commonLogic(gameQuestion, getBrainProgressionLogic);
+
+export default runBrainProgression;
