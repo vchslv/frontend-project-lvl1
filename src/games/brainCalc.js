@@ -1,35 +1,36 @@
 import _ from 'lodash';
-import commonLogic from '../index.js';
+import runEngine from '../index.js';
 
-const calcOperation = (num1, num2, mathSign) => {
-  let result;
-  switch (mathSign) {
+const calcOperation = (number1, number2, operator) => {
+  switch (operator) {
     case '+':
-      result = num1 + num2;
-      break;
+      return number1 + number2;
     case '-':
-      result = num1 - num2;
-      break;
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
     default:
-      result = num1 * num2;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
-  return result;
 };
 
 const operators = ['+', '-', '*'];
+const maxOperand1 = 99;
+const maxOperand2 = 99;
 
-const getBrainCalcLogic = () => {
-  const operand1 = _.random(99);
-  const operand2 = _.random(99);
-  const randomIndex = _.random(2);
-  const randomOperator = operators[randomIndex];
-  const roundQuestion = `${operand1} ${randomOperator} ${operand2}`;
-  const desiredAnswer = calcOperation(operand1, operand2, randomOperator).toString();
+const genRoundData = () => {
+  const operand1 = _.random(maxOperand1);
+  const operand2 = _.random(maxOperand2);
+  const numberOfOperations = operators.length - 1;
+  const indexOfOperator = _.random(numberOfOperations);
+  const operator = operators[indexOfOperator];
+  const roundQuestion = `${operand1} ${operator} ${operand2}`;
+  const desiredAnswer = calcOperation(operand1, operand2, operator).toString();
   return [desiredAnswer, roundQuestion];
 };
 
 const gameQuestion = 'What is the result of the expression?';
 
-const runBrainCalc = () => commonLogic(gameQuestion, getBrainCalcLogic);
+const runBrainCalc = () => runEngine(gameQuestion, genRoundData);
 
 export default runBrainCalc;

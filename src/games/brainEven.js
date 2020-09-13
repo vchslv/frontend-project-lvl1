@@ -1,17 +1,19 @@
 import _ from 'lodash';
-import commonLogic from '../index.js';
+import runEngine from '../index.js';
 
-const checkForParity = (number) => (((number % 2) === 0) ? 'yes' : 'no');
+const checkForParity = (number) => ((number % 2) === 0);
 
-const getBrainEvenLogic = () => {
-  const randomNumber = _.random(99);
-  const roundQuestion = randomNumber.toString();
-  const desiredAnswer = checkForParity(randomNumber);
+const maxNumber = 99;
+
+const genRoundData = () => {
+  const number = _.random(maxNumber);
+  const roundQuestion = number.toString();
+  const desiredAnswer = (checkForParity(number)) ? 'yes' : 'no';
   return [desiredAnswer, roundQuestion];
 };
 
 const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const runBrainEven = () => commonLogic(gameQuestion, getBrainEvenLogic);
+const runBrainEven = () => runEngine(gameQuestion, genRoundData);
 
 export default runBrainEven;

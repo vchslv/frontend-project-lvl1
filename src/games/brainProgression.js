@@ -1,27 +1,32 @@
 import _ from 'lodash';
-import commonLogic from '../index.js';
+import runEngine from '../index.js';
 
-const getBrainProgressionLogic = () => {
-  let desiredAnswer;
+const lengthOfProgression = 10;
+
+const getProgression = (element1, stepProgression, lengthOfProgression) => {
   const progression = [];
-  const randomNumber1 = _.random(99);
-  const stepProgression = _.random(1, 10);
-  const hiddenElement = _.random(9);
-  for (let i = 0; i < 10; i += 1) {
-    const numberInProgression = randomNumber1 + (i * stepProgression);
-    if (i !== hiddenElement) {
-      progression.push(numberInProgression);
-    } else {
-      progression.push('..');
-      desiredAnswer = numberInProgression.toString();
-    }
+  for (let i = 0; i < lengthOfProgression; i += 1) {
+    const numberInProgression = element1 + (i * stepProgression);
+    progression.push(numberInProgression);
   }
+  return progression;
+};
+
+const maxElement1 = 99;
+
+const genRoundData = () => {
+  const element1 = _.random(maxElement1);
+  const stepProgression = _.random(1, lengthOfProgression);
+  const progression = getProgression(element1, stepProgression, lengthOfProgression);
+  const indexOfHiddenElement = _.random(lengthOfProgression - 1);
+  const desiredAnswer = progression[indexOfHiddenElement].toString();
+  progression[indexOfHiddenElement] = '..'
   const roundQuestion = progression.join(' ');
   return [desiredAnswer, roundQuestion];
 };
 
 const gameQuestion = 'What number is missing in the progression?';
 
-const runBrainProgression = () => commonLogic(gameQuestion, getBrainProgressionLogic);
+const runBrainProgression = () => runEngine(gameQuestion, genRoundData);
 
 export default runBrainProgression;

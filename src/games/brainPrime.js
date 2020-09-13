@@ -1,27 +1,31 @@
 import _ from 'lodash';
-import commonLogic from '../index.js';
+import runEngine from '../index.js';
 
-const isPrime = (num) => {
-  if (num <= 1) {
+const isPrime = (number) => {
+  if (number <= 1) {
     return false;
   }
-  const halfNum = Math.round(num / 2);
-  for (let i = halfNum; i > 1; i -= 1) {
-    if (num % i === 0) {
+  const halfNumber = Math.round(number / 2);
+  for (let i = halfNumber; i > 1; i -= 1) {
+    if (number % i === 0) {
       return false;
     }
   }
   return true;
 };
 
-const getBrainPrimeLogic = () => {
-  const randomNumber = _.random(-99, 99);
-  const desiredAnswer = (!isPrime(randomNumber)) ? 'no' : 'yes';
-  return [desiredAnswer, randomNumber];
+const minRandomNumber = -99;
+const maxRandomNumber = 99;
+
+const genRoundData = () => {
+  const number = _.random(minRandomNumber, maxRandomNumber);
+  const roundQuestion = number.toString();
+  const desiredAnswer = (!isPrime(number)) ? 'no' : 'yes';
+  return [desiredAnswer, roundQuestion];
 };
 
 const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const runBrainPrime = () => commonLogic(gameQuestion, getBrainPrimeLogic);
+const runBrainPrime = () => runEngine(gameQuestion, genRoundData);
 
 export default runBrainPrime;
