@@ -8,6 +8,6 @@ const runBrainGames = () => {
   console.log('- brain-progression');
   console.log('To start one of the games - enter the command "make <name_of_game>".');
   console.log('For example: make brain-even');
-}
+};
 
 export default runBrainGames;

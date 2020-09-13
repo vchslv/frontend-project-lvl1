@@ -1,8 +1,6 @@
 import _ from 'lodash';
 import runEngine from '../index.js';
 
-const lengthOfProgression = 10;
-
 const getProgression = (element1, stepProgression, lengthOfProgression) => {
   const progression = [];
   for (let i = 0; i < lengthOfProgression; i += 1) {
@@ -13,6 +11,7 @@ const getProgression = (element1, stepProgression, lengthOfProgression) => {
 };
 
 const maxElement1 = 99;
+const lengthOfProgression = 10;
 
 const genRoundData = () => {
   const element1 = _.random(maxElement1);
@@ -20,7 +19,7 @@ const genRoundData = () => {
   const progression = getProgression(element1, stepProgression, lengthOfProgression);
   const indexOfHiddenElement = _.random(lengthOfProgression - 1);
   const desiredAnswer = progression[indexOfHiddenElement].toString();
-  progression[indexOfHiddenElement] = '..'
+  progression[indexOfHiddenElement] = '..';
   const roundQuestion = progression.join(' ');
   return [desiredAnswer, roundQuestion];
 };
