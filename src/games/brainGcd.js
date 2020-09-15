@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import runEngine from '../index.js';
 
-const maxCommonDivisor = (number1, number2) => {
+const getMaxCommonDivisor = (number1, number2) => {
   const minNumber = Math.min(number1, number2);
   const maxNumber = Math.max(number1, number2);
   if (minNumber === 0) {
@@ -27,7 +27,7 @@ const genRoundData = () => {
   const number1 = _.random(1, maxNumber1);
   const number2 = _.random(maxNumber2);
   const roundQuestion = `${number1} ${number2}`;
-  const desiredAnswer = maxCommonDivisor(number1, number2).toString();
+  const desiredAnswer = getMaxCommonDivisor(number1, number2).toString();
   return [desiredAnswer, roundQuestion];
 };
 

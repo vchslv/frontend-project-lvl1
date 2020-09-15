@@ -12,10 +12,11 @@ const getProgression = (element1, stepProgression, lengthOfProgression) => {
 
 const maxElement1 = 99;
 const lengthOfProgression = 10;
+const maxStepOfProgression = 10;
 
 const genRoundData = () => {
   const element1 = _.random(maxElement1);
-  const stepProgression = _.random(1, lengthOfProgression);
+  const stepProgression = _.random(1, maxStepOfProgression);
   const progression = getProgression(element1, stepProgression, lengthOfProgression);
   const indexOfHiddenElement = _.random(lengthOfProgression - 1);
   const desiredAnswer = progression[indexOfHiddenElement].toString();

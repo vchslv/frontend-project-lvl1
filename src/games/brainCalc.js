@@ -17,11 +17,11 @@ const calcOperation = (number1, number2, operator) => {
 const operators = ['+', '-', '*'];
 const maxOperand1 = 99;
 const maxOperand2 = 99;
+const numberOfOperations = operators.length - 1;
 
 const genRoundData = () => {
   const operand1 = _.random(maxOperand1);
   const operand2 = _.random(maxOperand2);
-  const numberOfOperations = operators.length - 1;
   const indexOfOperator = _.random(numberOfOperations);
   const operator = operators[indexOfOperator];
   const roundQuestion = `${operand1} ${operator} ${operand2}`;
